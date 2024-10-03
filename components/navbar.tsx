@@ -5,7 +5,7 @@ import { handleSignOut } from "@/app/actions/authActions";
 
 export default async function Navbar() {
   const session = await auth();
-  console.log({ session });
+  console.log('session', { session });
   return (
     <nav className="flex justify-between items-center py-3 px-4 bg-white shadow-md">
       <Link href="/" className="text-xl font-bold">

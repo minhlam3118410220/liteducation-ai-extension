@@ -51,16 +51,16 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             }
             return !!auth;
         },
-        jwt({ token, user, trigger, session }) {
-            if (user) {
-                token.id = user.id as string;
-                token.role = user.role as string;
-            }
-            if (trigger === "update" && session) {
-                token = { ...token, ...session };
-            }
-            return token;
-        },
+        // jwt({ token, user, trigger, session }) {
+        //     if (user) {
+        //         token.id = user.id as string;
+        //         token.role = user.role as string;
+        //     }
+        //     if (trigger === "update" && session) {
+        //         token = { ...token, ...session };
+        //     }
+        //     return token;
+        // },
         session({ session, token }) {
             session.user.id = token.id;
             session.user.role = token.role;
